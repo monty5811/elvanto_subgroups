@@ -6,6 +6,8 @@ Small webapp to provide one way sync for Elvanto groups.
 
 This app was developed for use at [St Columba's Free Church](http://www.stcsfc.org/). 
 
+![Screenshot](/screenshot.jpg?raw=true)
+
 ## Example use case
 
 You have a "sound" group and a "screens" group in Elvanto and want to create a "technial team" group made up of the "sound" and "screens" group. 
