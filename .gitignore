@@ -1,0 +1,10 @@
+.hypothesis/*
+*.pyc
+venv*/
+*.sqlite3
+.c9*
+.idea/*
+*sublime-*
+.cache/
+.coverage
+.module-cache/

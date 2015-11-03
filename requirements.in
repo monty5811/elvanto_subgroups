@@ -1,0 +1,14 @@
+dj-database-url
+Django<1.9
+django-bootstrap3
+django-extensions
+django-postgrespool
+django-sslify
+djangorestframework
+gunicorn
+ipython
+opbeat
+psycopg2
+python-social-auth
+requests
+whitenoise

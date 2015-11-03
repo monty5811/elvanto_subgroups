@@ -1,0 +1,52 @@
+{% extends "elvanto_subgroups/base.html" %}
+{% load staticfiles %}
+{% block content %}
+<div class="col-md-5 col-md-offset-1 main">
+<h1 class="page-header">Explanation</h1>
+
+<p>Elvanto does not currently support sub-groups. This app will hack a basic sub-group functionality on top of Elvanto for you.</p>
+
+<h2 id="instructions">Instructions</h2>
+
+<ol>
+<li>Click create a new link</li>
+<li>Select your main group</li>
+<li>Select all your sub-groups</li>
+<li>Click create</li>
+<li>You should now see the groups linked in the table</li>
+<li>Wait for the synchronisation to run</li>
+</ol>
+
+<h2 id="details">Details</h2>
+
+<p>A one way sync is carried out from the subgroups to the main group:</p>
+
+<ul>
+<li>All people in the subgroups are added to the main group</li>
+<li>Anyone in the main group, but not a subgroup is removed from the main group</li>
+<li>This means that <strong>any changes to the membership of the main group will be <em>overwritten</em></strong></li>
+<li>Roles are ignored and may be safely changed</li>
+<li>No other information is currently synchronised (e.g. picture, location)</li>
+<li>Once a group has been designated a main group, you cannot make it a sub-group (you cannot chain groups together)</li>
+<li>If you create a circular dependency - i.e. a sub-group has itself as a main group, the linkage will be ignored and this group will never be synchronised</li>
+<li>Once a link has been deleted, no further synchronisation will be carried out</li>
+</ul>
+</div>
+<div class="col-md-5 main">
+<h1 class="page-header">Overview</h1>
+<br>
+<p><a href="{% url 'link_add' %}" class="btn btn-default">Create a new link</a></p>
+<br>
+<div id="links_table"></div>
+</div>
+<script src="https://fb.me/react-0.13.1.js"></script>
+<script src="{%static 'js/links_table.js'%}"></script>
+<script>
+React.render(
+     React.createElement(LinksTable, {url:"{%url 'api_links' %}", pollInterval: 20000}),
+     document.getElementById('links_table')
+    );
+</script>
+{% endblock %}
+{% block morejs %}
+{% endblock %}

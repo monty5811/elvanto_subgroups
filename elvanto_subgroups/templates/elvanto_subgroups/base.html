@@ -1,0 +1,19 @@
+{% load staticfiles %}{% load bootstrap3 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include 'elvanto_subgroups/head.html' %}
+</head>
+<body>
+   {% include 'elvanto_subgroups/nav.html' %}
+    <div class="container-fluid">
+      <div class="row">
+        <br>
+          {% block content %} {% endblock %}
+      </div>
+    </div>
+<script src="{%static 'js/main.js'%}"></script>
+{% block morejs %}
+{% endblock %}
+</body>
+</html>

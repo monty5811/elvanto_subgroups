@@ -1,0 +1,62 @@
+{
+  "name": "Elvanto Subgroups",
+  "description": "Web app to create subgroups inside Elvanto.",
+  "keywords": [
+    "elvanto",
+    "django"
+  ],
+  "website": "https://github.com/monty5811/elvanto_subgroups",
+  "repository": "https://github.com/monty5811/elvanto_subgroups",
+  "success_url": "/",
+  "scripts": {
+    "postdeploy": "./manage.py migrate && ./manage.py pull_from_elvanto"
+  },
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "settings.production",
+    "DJANGO_SECRET_KEY": {
+      "generator": "secret"
+    },
+    "DJANGO_ALLOWED_HOST": {
+      "value": "appname.herokuapp.com",
+      "required": false
+    },
+    "ELVANTO_KEY": {
+      "description": "Elvanto API Key",
+      "value": ""
+    },
+    "SOCIAL_AUTH_GOOGLE_OAUTH2_KEY": {
+      "description": "Google Client ID",
+      "value": ""
+    },
+    "SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET": {
+      "description": "Google Client Secret",
+      "value": ""
+    },
+    "SOCIAL_AUTH_GOOGLE_OAUTH2_WHITELISTED_DOMAINS": {
+      "description": "It is strongly recommened you leave this blank. Comma separated list of domains from which anyone will be able to access the app.",
+      "value": "",
+      "required": false
+    },
+    "SOCIAL_AUTH_GOOGLE_OAUTH2_WHITELISTED_EMAILS": {
+      "description": "Comma separated list of emails that can access the app",
+      "value": ""
+    },
+    "OPBEAT_APP_ID": {
+      "value": "",
+      "required": false
+    },
+    "OPBEAT_ORG_ID": {
+      "value": "",
+      "required": false
+    },
+    "OPBEAT_SECRET_TOKEN": {
+      "value": "",
+      "required": false
+    }
+  },
+  "addons": [
+    "heroku-postgresql:hobby-dev",
+    "papertrail:choklad",
+    "scheduler:standard"
+  ]
+}
