@@ -6,7 +6,7 @@ Small webapp to provide one way sync for Elvanto groups.
 
 This app was developed for use at [St Columba's Free Church](http://www.stcsfc.org/). 
 
-![Screenshot](/screenshot.jpg?raw=true)
+![Screenshot](/screenshot.png?raw=true)
 
 ## Example use case
 
